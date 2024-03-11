@@ -1,0 +1,1 @@
+Este directorio contiene la información inicial de los grupos compactos en SPLUS, los que están en el footprint, los que no, los tiles de splus para abrir en aladin y algunas verificaciones.

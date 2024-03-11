@@ -1,0 +1,1 @@
+Este directorio contiene toda la información de las fuentes en un radio de 0.1 grados, centradas en cada uno de los 66 SFCGs existentes en la spluscloud.
