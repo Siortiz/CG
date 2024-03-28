@@ -5,7 +5,7 @@ from astropy.table import *
 from astropy.io import fits
 from astropy.nddata.utils import Cutout2D
 import splusdata
-conn = splusdata.connect('gpardo','gNGC5054') #(usuario,contraseña) ## from splus.cloud
+conn = splusdata.connect('sortiz','83727992seba') #(usuario,contraseña) ## from splus.cloud
 from psf_new import make_psf
 from ejecutable import S,size
 
@@ -26,7 +26,7 @@ def recortar(position,size2,grupo,field,hdu,hdr,B): #le ingreso el nombre de la 
 	#Convertir a fits la imagen how to convertrecortada
 	im_Re = fits.PrimaryHDU(Recortada.data, header=hdr)
 	im_Re.writeto('Field_Img/%s_%s_%s.fits'%(grupo,field,B))
-	im_Re.closed()
+	im_Re._close()
 	return
 
 

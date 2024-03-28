@@ -6,7 +6,7 @@ import splusdata
 from astropy.stats import sigma_clipped_stats
 from astropy.io import fits
 from astropy.nddata import CCDData
-conn = splusdata.connect(usuario,contraseña)
+conn = splusdata.connect('sortiz', '83727992seba')
 Filters=np.array(['R','F378','F395','F410','F430','F515','F660','F861','G','I','Z','U'])
 
 def img(Fi):
