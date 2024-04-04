@@ -1,0 +1,13 @@
+RA,DEC,FORMAT,_RAJ2000,_DEJ2000,Group,RAJ2000,DEJ2000,zUV,nUV,ngal,nz,mz,r{theta},Rij,sigmalos,Simbad,Separation
+14.4054583,-35.7571944,J2000,14.4054583,-35.7571944,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group= 22,00 57 37.31,-35 45 25.9,0.1259,4,4,1,1,0.948,,,Simbad,0.0
+15.5714583,-17.2013889,J2000,15.5714583,-17.2013889,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group= 23,01 02 17.15,-17 12 05.0,0.067744,4,3,1,1,1.375,,,Simbad,0.0
+43.4509167,-41.9697222,J2000,43.4509167,-41.9697222,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group= 47,02 53 48.22,-41 58 11.0,0.069815,4,4,1,1,0.909,,,Simbad,0.0
+52.9541667,-39.6227778,J2000,52.9541667,-39.6227778,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group= 54,03 31 49.00,-39 37 22.0,0.10668,4,3,1,1,0.894,,,Simbad,0.0
+55.6182083,-41.1549167,J2000,55.6182083,-41.1549167,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group= 60,03 42 28.37,-41 09 17.7,0.004923,4,3,1,1,0.793,,,Simbad,0.0
+97.2095833,-69.6947222,J2000,97.2095833,-69.6947222,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group= 72,06 28 50.30,-69 41 41.0,0.03368,4,4,1,1,1.096,,,Simbad,0.0
+314.48475,-24.9644167,J2000,314.48475,-24.9644167,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group=186,20 57 56.34,-24 57 51.9,0.094365,4,3,1,1,1.032,,,Simbad,0.0
+319.3525,-35.9165556,J2000,319.3525,-35.9165556,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group=189,21 17 24.60,-35 54 59.6,0.029797,4,4,1,1,0.789,,,Simbad,0.0
+319.51275,-50.7521944,J2000,319.51275,-50.7521944,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group=190,21 18 03.06,-50 45 07.9,0.073594,4,3,1,1,1.123,,,Simbad,0.0
+330.18975,-42.8210556,J2000,330.18975,-42.8210556,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group=194,22 00 45.54,-42 49 15.8,0.067693,4,4,1,1,0.902,,,Simbad,0.0
+352.546,-44.1920556,J2000,352.546,-44.1920556,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group=216,23 30 11.04,-44 11 31.4,0.100413,4,3,1,1,1.032,,,Simbad,0.0
+66.7409167,-49.1194167,J2000,66.7409167,-49.1194167,http://vizier.u-strasbg.fr/viz-bin/VizieR-4?-info=XML&-out.add=.&-source=J/MNRAS/453/1965&Group=235,04 26 57.82,-49 07 09.9,0.05828,5,5,1,1,0.953,,,Simbad,0.0
