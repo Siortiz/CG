@@ -51,7 +51,7 @@ def grafico(f,grupo,field):
 		axs[2, j].imshow(f[24+j].data,cmap='gray',vmin=-vmax[j],vmax=vmax[j])
 		axs[0,0].text( 60, 140, '5.5\"', fontsize=10,color='blue') 
 		axs[0,0].plot([60, 80], [150, 150], 'b-', lw=3)
-	plt.savefig('Out_img/%s_%s.svg'%(grupo,field),format='svg', dpi=1200)
+	plt.savefig('Out_Img/%s_%s.svg'%(grupo,field),format='svg', dpi=1200)
 	#plt.show()
 	plt.close()
 	return

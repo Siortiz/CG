@@ -43,7 +43,7 @@ def Median_sky(grupo,Field):
     sk=[]
     for i in range(len(Filtros)):
         #print(F[i])
-        image = CCDData.read('Field_Img/%s_%s_%s.fits'%(grupo,Field,Filtros[i]),unit="adu") #Abre la imagen donde esta el grupo
+        image = CCDData.read(f'Field_Img/Grupo_{grupo}/%s_%s_%s.fits'%(grupo,Field,Filtros[i]),unit="adu") #Abre la imagen donde esta el grupo
         mean, median, std = sigma_clipped_stats(image.data, sigma=3.0)
         sk.append(median)
     I='1) %f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f 1'%(sk[0],sk[1],sk[2],sk[3],sk[4],sk[5],sk[6],sk[7],sk[8],sk[9],sk[10],sk[11])
@@ -107,8 +107,8 @@ def arh_galfit(GRf,z,field,size):
     	# the order of the bands must be maintained in all multi-band options
     	# the first band in the list is the 'reference band'
 	for j in range(len(Filtros)):
-		a.append('Field_Img/%s_%s_%s.fits'%(grupo,field,Filtros[j]))# 'CGs_FITS/R_%i_%s_%s_g_%s.fits'%(frame,Field,Filters[j],grupo))
-		d.append('Field_Img/PSF/psf_%s_%s.fits'%(field,Filtros[j]))
+		a.append(f'Field_Img/Grupo_{grupo}/%s_%s_%s.fits'%(grupo,field,Filtros[j]))# 'CGs_FITS/R_%i_%s_%s_g_%s.fits'%(frame,Field,Filters[j],grupo))
+		d.append('Field_Img/psf/psf_%s_%s.fits'%(field,Filtros[j]))
 	A='A) %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s'%(a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9],a[10],a[11])
 	# Input PSF image (CSL of <nbands> FITS filenames) 
 	# and a single diffusion kernel (FITS filename, # or omitted)
