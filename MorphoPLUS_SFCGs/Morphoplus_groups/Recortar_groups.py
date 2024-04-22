@@ -5,10 +5,10 @@ from astropy.table import *
 from astropy.io import fits
 from astropy.nddata.utils import Cutout2D
 import splusdata
-conn = splusdata.connect('gpardo','gNGC5054') #(usuario,contraseña) ## from splus.cloud
+conn = splusdata.connect('sortiz','83727992seba') #(usuario,contraseña) ## from splus.cloud
 from psf_new import make_psf
 from ejecutable import S,size
-
+import os
 
 Datos_S= S.group_by('Groups')
 GS=Datos_S.groups.keys #grupos
@@ -25,8 +25,11 @@ def recortar(position,size2,grupo,field,hdu,hdr,B): #le ingreso el nombre de la 
 	Recortada=Cutout2D(hdu, position, size2)
 	#Convertir a fits la imagen how to convertrecortada
 	im_Re = fits.PrimaryHDU(Recortada.data, header=hdr)
-	im_Re.writeto('Field_Img/%s_%s_%s.fits'%(grupo,field,B))
-	im_Re.closed()
+	directorio = f'Field_Img/Grupo_{grupo}'
+	if not os.path.exists(directorio):
+		os.makedirs(directorio)
+	im_Re.writeto(f'{directorio}/%s_%s_%s.fits'%(grupo,field,B))
+	im_Re._close()
 	return
 
 
@@ -52,9 +55,9 @@ def por_campo(field):
 	return
 	
 def img_det(field,grupo):
-	hdulist = fits.open('Field_Img/%s_%s_R.fits'%(grupo,field))
-	hdulist1 = fits.open('Field_Img/%s_%s_G.fits'%(grupo,field))
-	hdulist2 =fits.open('Field_Img/%s_%s_Z.fits'%(grupo,field))
+	hdulist = fits.open(f'Field_Img/Grupo_{grupo}/%s_%s_R.fits'%(grupo,field))
+	hdulist1 = fits.open(f'Field_Img/Grupo_{grupo}/%s_%s_G.fits'%(grupo,field))
+	hdulist2 =fits.open(f'Field_Img//Grupo_{grupo}/%s_%s_Z.fits'%(grupo,field))
 	hdu = hdulist[0].data + hdulist1[0].data + hdulist2[0].data
 	hdr = hdulist[0].header 
 	#print(j,k)
@@ -78,7 +81,7 @@ for f in Fields["Field"]:
 	for g in GS["Groups"]:
 		img_det(f,g)
 		Data.append('sex  Field_Img/det/det_%s_%s.fits -c sextopsfex.conf -CATALOG_NAME R.fits -CATALOG_TYPE FITS_LDAC -PARAMETERS_NAME ./sextopsfex.param -DETECT_MINAREA 10 -DETECT_THRESH 1.5 -ANALYSIS_THRESH 1.5 -FILTER_NAME gauss_5.0_9x9.conv -PHOT_APERTURES 20.55 -SATUR_LEVEL 25000  -MAG_ZEROPOINT 20.833 -GAIN_KEY GAIN -GAIN 652.7072652846 -PIXEL_SCALE 0.55 -SEEING_FWHM 1.38 -BACK_SIZE 900 -BACKPHOTO_TYPE GLOBAL -BACKPHOTO_THICK 24 -CHECKIMAGE_TYPE SEGMENTATION -CHECKIMAGE_NAME Field_Img/det/det_%s_%s.seg.fits'%(g,f,g,f))
-
+		print(f'Grupo %s del campo %s recortado.' %(g, f))
 fic = open("dopsfex_mask.sh", "w")
 for line in Data:
 	print(line, file=fic)
