@@ -4,7 +4,7 @@ from astropy.io import ascii
 import numpy as np
 import csv
 
-S=Table.read('/home/seba/Documents/CG/Observaciones_SPLUS/Input_MorphoPlus.csv')
+S=Table.read('/home/sebastian/Documents/CG/Observaciones_SPLUS/Input_MorphoPlus.csv')
 
 size=800
 #archivo_csv = "Catalogos/g_S.csv"
