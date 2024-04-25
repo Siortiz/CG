@@ -4,9 +4,9 @@ from astropy.io import ascii
 import numpy as np
 import csv
 
-S=Table.read('/home/sebastian/Documents/CG/Observaciones_SPLUS/Input_MorphoPlus.csv')
+S=Table.read('/home/seba/Documents/CG/Observaciones_SPLUS/test_output.csv')
 
-size=800
+size=500
 #archivo_csv = "Catalogos/g_S.csv"
 
 Datos_S= S.group_by('Field')
@@ -19,9 +19,9 @@ Data.append('python inputs_galfitm.py')
 def ejecutable(Fields):
 	for f in Fields['Field']:	
 		SF=S[S['Field']==f]
-		Datos_SF= SF.group_by('Groups')
+		Datos_SF= SF.group_by('Group')
 		GS=Datos_SF.groups.keys #grupos
-		for g in GS['Groups']:
+		for g in GS['Group']:
 			Data.append('chmod 777 inputs/galfit_%s_%s.input'%(g,f))
 			Data.append('./galfitm-1.4.4-linux-x86_64 inputs/galfit_%s_%s.input'%(g,f))
 	Data.append('python leer_outputs.py')

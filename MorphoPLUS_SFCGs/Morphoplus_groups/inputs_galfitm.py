@@ -51,7 +51,7 @@ def Median_sky(grupo,Field):
     
     
 def arh_galfit(GRf,z,field,size):
-	grupo=GRf['Groups'][0] #nombre del grupo
+	grupo=GRf['Group'][0] #nombre del grupo
 	Filtros=np.array(['U','F378','F395','F410','F430','G','F515','R','F660','I','F861','Z']) #filtros de splus
 	# Band labels (CSL of <nbands> labels containing no whitespace)
 	# (these must be unique in a case-insensitive manner)
@@ -168,11 +168,11 @@ for f in Fields['Field']:
 	print(size)	
 	#por_campo(f)
 	SF=S[S['Field']==f]
-	Datos_SF= SF.group_by('Groups')
+	Datos_SF= SF.group_by('Group')
 	GS=Datos_SF.groups.keys #grupos
 	zp=Z[Z['Field']==f]
-	for g in GS['Groups']:
-		mask=Datos_SF.groups.keys['Groups'] == g#'cCGs-4007' #Gt['Groups'][i]
+	for g in GS['Group']:
+		mask=Datos_SF.groups.keys['Group'] == g#'cCGs-4007' #Gt['Groups'][i]
 		#print(([i],G['Groups'][i]))
 		GR=Datos_SF.groups[mask]
 		print(GR)

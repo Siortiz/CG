@@ -5,17 +5,19 @@ from astropy.table import *
 from astropy.io import fits
 from astropy.nddata.utils import Cutout2D
 import splusdata
-conn = splusdata.connect('sortiz','83727992seba') #(usuario,contraseña) ## from splus.cloud
+conn = splusdata.Core('sortiz','83727992seba') #(usuario,contraseña) ## from splus.cloud
 from psf_new import make_psf
 from ejecutable import S,size
 import os
 
-Datos_S= S.group_by('Groups')
+Datos_S= S.group_by('Group')
 GS=Datos_S.groups.keys #grupos
 
 Datos_S_field= S.group_by('Field')
 Fields=Datos_S_field.groups.keys #numero de grupos
-Bands=np.array(['R','F378','F395','F410','F430','F515','F660','F861','G','I','Z','U']) #filtros de splus
+#Bands=np.array(['R','F378','F395','F410','F430','F515','F660','F861','G','I','Z','U']) #filtros de splus
+Bands=np.array(['F410','F430','F515','F660', 'F861','G', 'I','Z','U']) #filtros de splus
+#Bands=np.array(['F515']) #filtros de splus
 
 
 
@@ -36,17 +38,17 @@ def recortar(position,size2,grupo,field,hdu,hdr,B): #le ingreso el nombre de la 
 
 def por_campo(field):
 	SF=S[S['Field']==field]
-	Datos_SF= SF.group_by('Groups')
+	Datos_SF= SF.group_by('Group')
 	GS=Datos_SF.groups.keys #grupos
 	for b in Bands:
-		hdulist = conn.get_field(field, b)
+		hdulist = conn.field_frame(field, b)
 		hdu = hdulist[1].data
-		print("2")
+		print(f"Descargando filtro {b}")
 		hdr = hdulist[1].header
 		fwhm, beta = (hdr["HIERARCH OAJ PRO FWHMMEAN"],hdr["HIERARCH OAJ PRO FWHMBETA"])
 		make_psf(fwhm, beta, "Field_Img/psf/psf_"  + field + "_" + b + ".fits")
-		for g in GS['Groups']:#(295,len(Grupos_sub)):#len(G['Groups'])):
-			mask = Datos_SF.groups.keys['Groups'] == g 
+		for g in GS['Group']:#(295,len(Grupos_sub)):#len(G['Groups'])):
+			mask = Datos_SF.groups.keys['Group'] == g 
 			GR=Datos_SF.groups[mask]
 			position=(np.mean(GR['X']),np.mean(GR['Y'])) #Calcula pla posicion media del grupo
 			size2=(size,size)
@@ -76,16 +78,16 @@ for f in Fields["Field"]:
 	print(f)
 	por_campo(f)
 	SF=S[S['Field']==f]
-	Datos_SF= SF.group_by('Groups')
+	Datos_SF= SF.group_by('Group')
 	GS=Datos_SF.groups.keys #grupos
-	for g in GS["Groups"]:
+	for g in GS["Group"]:
 		img_det(f,g)
 		Data.append('sex  Field_Img/det/det_%s_%s.fits -c sextopsfex.conf -CATALOG_NAME R.fits -CATALOG_TYPE FITS_LDAC -PARAMETERS_NAME ./sextopsfex.param -DETECT_MINAREA 10 -DETECT_THRESH 1.5 -ANALYSIS_THRESH 1.5 -FILTER_NAME gauss_5.0_9x9.conv -PHOT_APERTURES 20.55 -SATUR_LEVEL 25000  -MAG_ZEROPOINT 20.833 -GAIN_KEY GAIN -GAIN 652.7072652846 -PIXEL_SCALE 0.55 -SEEING_FWHM 1.38 -BACK_SIZE 900 -BACKPHOTO_TYPE GLOBAL -BACKPHOTO_THICK 24 -CHECKIMAGE_TYPE SEGMENTATION -CHECKIMAGE_NAME Field_Img/det/det_%s_%s.seg.fits'%(g,f,g,f))
-		print(f'Grupo %s del campo %s recortado.' %(g, f))
+#		print(f'Grupo %s del campo %s recortado.' %(g, f))
 fic = open("dopsfex_mask.sh", "w")
 for line in Data:
 	print(line, file=fic)
 fic.close()
-	#subprocess.	
+    #subprocess.	
 
 

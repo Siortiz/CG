@@ -62,10 +62,10 @@ Fields=Datos_S.groups.keys
 Bands=np.array(['U','F378','F395','F410','F430','G','F515','R','F660','I','F861','Z'])
 for f in Fields['Field']:
 	SF=S[S['Field']==f]
-	Datos_SF= SF.group_by('Groups')
+	Datos_SF= SF.group_by('Group')
 	GS=Datos_SF.groups.keys #grupos
-	for g in GS['Groups']:
-		mask=Datos_SF.groups.keys['Groups'] ==  g #'cCGs-4007' #Gt['Groups'][i]
+	for g in GS['Group']:
+		mask=Datos_SF.groups.keys['Group'] ==  g #'cCGs-4007' #Gt['Groups'][i]
 		Tablef=Datos_SF.groups[mask]
 		for i in range(len(Tablef)):
 			fi=fits.open("galfitm_%s_%s.fits"%(g,f))
@@ -96,10 +96,12 @@ for i in range(12):
 table = Table(rows=Tabla,
               names=header_names)
 						
-
-ascii.write(table, 'Catalogos/GalfitM_output.csv', format='csv', fast_writer=False,overwrite=True) #guarda la tabla completa con los 
+Datos_S= S.group_by('Group')
+GS=Datos_S.groups.keys
+#g = int(GS['Group'])
+#ascii.write(table, f'Catalogos/GalfitM_output_try.csv', format='csv', fast_writer=False,overwrite=True) #guarda la tabla completa con los 
 		
 		
 		
-		
+	
 		
