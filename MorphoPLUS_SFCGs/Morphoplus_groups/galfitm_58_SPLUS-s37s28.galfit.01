@@ -1,0 +1,108 @@
+
+#  Input menu file: inputs/galfit_58_SPLUS-s37s28.input
+
+#  Chi^2/nu = 1.164,  Chi^2 = 3432988.292,  Ndof = 2950479
+
+================================================================================
+# IMAGE and GALFIT CONTROL PARAMETERS
+A) Field_Img/Grupo_58/58_SPLUS-s37s28_U.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_F378.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_F395.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_F410.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_F430.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_G.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_F515.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_R.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_F660.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_I.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_F861.fits,Field_Img/Grupo_58/58_SPLUS-s37s28_Z.fits      # Input data image (FITS file)
+A1) u,J0378,J0395,J0410,J0430,g,J0515,r,J0660,i,J0861,z     # Band labels
+A2) 3536.00,3770.00,3940.00,4094.00,4292.00,4751.00,5133.00,6258.00,6614.00,7690.00,8611.00,8831.00     # Band wavelengths
+B) galfitm_58_SPLUS-s37s28.fits      # Output data image block
+C) none,none,none,none,none,none,none,none,none,none,none,none 0.000   # Sigma image and min. sigma factor (made from data if blank or "none") 
+D) Field_Img/psf/psf_SPLUS-s37s28_U.fits,Field_Img/psf/psf_SPLUS-s37s28_F378.fits,Field_Img/psf/psf_SPLUS-s37s28_F395.fits,Field_Img/psf/psf_SPLUS-s37s28_F410.fits,Field_Img/psf/psf_SPLUS-s37s28_F430.fits,Field_Img/psf/psf_SPLUS-s37s28_G.fits,Field_Img/psf/psf_SPLUS-s37s28_F515.fits,Field_Img/psf/psf_SPLUS-s37s28_R.fits,Field_Img/psf/psf_SPLUS-s37s28_F660.fits,Field_Img/psf/psf_SPLUS-s37s28_I.fits,Field_Img/psf/psf_SPLUS-s37s28_F861.fits,Field_Img/psf/psf_SPLUS-s37s28_Z.fits          # Input PSF image and (optional) diffusion kernel
+E) 1                   # PSF fine sampling factor relative to data 
+F) Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits,Field_Img/mask/mask_58_SPLUS-s37s28.fits      # Bad pixel mask (FITS image or ASCII coord list)
+G) none                # File with parameter constraints (ASCII file) 
+H) 1    500  1    500  # Image region to fit (xmin xmax ymin ymax)
+I) 150    150          # Size of the convolution box (x y)
+J) 19.841,19.064,19.036,19.986,20.073,22.457,20.416,22.582,20.119,22.430,20.694,21.852      # Magnitude photometric zeropoint 
+K) 0.550  0.550        # Plate scale (dx dy)   [arcsec per pixel]
+O) regular             # Display type (regular, curses, both)
+P) 0                   # Choose: 0=optimize, 1=model, 2=imgblock, 3=subcomps
+U) 0 0.750000 25 4 40 0.000000 1.000000  # Non-parametric component settings
+V) 0 0 50 0.800000 0.500000 100000   # MultiNest options
+W) input,model,residual      # Output options
+
+# INITIAL CHEBYSHEV FITTING PARAMETERS
+#
+#   For component type, the allowed functions are: 
+#       sersic, expdisk, edgedisk, devauc, king, nuker, psf, 
+#       gaussian, moffat, ferrer, corser, and sky. 
+#  
+#   Hidden parameters will only appear when they're specified:
+#       Bn (n=integer, Bending Modes).
+#       C0 (diskyness/boxyness), 
+#       Fn (n=integer, Azimuthal Fourier Modes).
+#       R0-R10 (coordinate rotation, for creating spiral structures).
+#       To, Ti, T0-T10 (truncation function).
+# 
+# ------------------------------------------------------------------------------
+#   par)    par value(s)    fit toggle(s)    # parameter description 
+# ------------------------------------------------------------------------------
+
+# Component number: 1
+ 0) sersic                 #  Component type
+ 1) 219.145,0,-2.842e-14,4.263e-14,-5.211e-14,-3.316e-14,-4.737e-15,-5.211e-14,-3.316e-14,1.232e-13,-1.421e-14,-6.158e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position x
+ 2) 159.949,2.368e-14,-3.316e-14,3.790e-14,-2.842e-14,-2.368e-14,-2.368e-15,-3.790e-14,-2.842e-14,9.000e-14,-4.737e-15,-4.915e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position y
+ 3) 898.214,1558.545,558.736,-1388.811,-3177.005,-3452.876,-2070.924,282.011,2220.832,2603.844,1588.206,396.055    1,1,1,1,1,1,1,1,1,1,1,1      cheb #  Integrated magnitude 
+ 4) 5.917,-0.175,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  R_e (effective radius)   [pix]
+ 5) 1.254,0.211,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 7) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 8) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 9) 0.808,1.295e-16,-1.295e-16,1.850e-16,-2.035e-16,-1.110e-16,-3.701e-17,-1.850e-16,-1.388e-16,4.718e-16,-3.701e-17,-2.429e-16    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Axis ratio (b/a)  
+10) -55.809,4.737e-15,-4.737e-15,1.303e-14,-1.658e-14,-1.066e-14,-2.368e-15,-1.658e-14,-1.184e-14,3.967e-14,-5.329e-15,-1.954e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 2
+ 0) sersic                 #  Component type
+ 1) 319.447,0,-8.527e-14,6.632e-14,-7.579e-14,-6.632e-14,-1.895e-14,-7.579e-14,-5.684e-14,1.824e-13,-9.474e-15,-8.763e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position x
+ 2) 194.669,0,-3.316e-14,4.263e-14,-4.737e-14,-3.316e-14,-4.737e-15,-4.263e-14,-2.842e-14,1.161e-13,-8.290e-15,-5.625e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position y
+ 3) 30.850,22.545,8.384,-21.882,-48.257,-53.055,-31.529,4.124,33.500,39.780,24.571,7.075    1,1,1,1,1,1,1,1,1,1,1,1      cheb #  Integrated magnitude 
+ 4) 6.085,-0.199,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  R_e (effective radius)   [pix]
+ 5) 1.128,0.470,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 7) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 8) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 9) 0.503,1.295e-16,-1.110e-16,1.480e-16,-1.665e-16,-9.252e-17,-9.252e-18,-1.665e-16,-1.110e-16,3.978e-16,-9.252e-18,-1.920e-16    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Axis ratio (b/a)  
+10) 67.525,-1.184e-14,9.474e-15,-1.184e-14,1.421e-14,9.474e-15,2.368e-15,1.540e-14,1.066e-14,-3.494e-14,1.776e-15,2.043e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 3
+ 0) sersic                 #  Component type
+ 1) 199.151,2.842e-14,-3.790e-14,4.737e-14,-4.737e-14,-2.842e-14,-4.737e-15,-4.263e-14,-3.316e-14,1.113e-13,-1.066e-14,-5.625e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position x
+ 2) 327.223,6.632e-14,-5.684e-14,7.579e-14,-7.579e-14,-4.737e-14,-1.895e-14,-8.527e-14,-5.684e-14,1.942e-13,-7.105e-15,-9.119e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position y
+ 3) -2.872,-35.792,-11.644,31.989,71.363,78.302,46.567,-6.138,-49.490,-58.733,-36.202,-10.414    1,1,1,1,1,1,1,1,1,1,1,1      cheb #  Integrated magnitude 
+ 4) 6.918,-0.754,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  R_e (effective radius)   [pix]
+ 5) 1.091,0.260,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 7) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 8) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 9) 0.578,9.252e-17,-7.401e-17,1.110e-16,-1.480e-16,-8.327e-17,-1.850e-17,-1.110e-16,-9.252e-17,3.377e-16,-2.313e-17,-1.619e-16    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Axis ratio (b/a)  
+10) 78.767,2.368e-15,2.368e-15,-1.658e-14,1.895e-14,1.421e-14,2.368e-15,2.132e-14,1.421e-14,-4.559e-14,1.776e-15,2.398e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 4
+ 0) sersic                 #  Component type
+ 1) 258.723,1.895e-14,-1.421e-14,6.158e-14,-5.684e-14,-3.316e-14,-9.474e-15,-5.211e-14,-4.263e-14,1.492e-13,-1.421e-14,-6.750e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position x
+ 2) 314.212,0,-4.737e-14,5.684e-14,-5.684e-14,-3.316e-14,-9.474e-15,-6.158e-14,-5.684e-14,1.776e-13,-7.105e-15,-8.290e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #      Position y
+ 3) 22.457,5.461,2.307,-5.650,-12.083,-13.364,-7.968,1.048,8.383,10.090,6.120,1.740    1,1,1,1,1,1,1,1,1,1,1,1      cheb #  Integrated magnitude 
+ 4) 3.409,0.150,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  R_e (effective radius)   [pix]
+ 5) 0.916,9.410e-02,0,0,0,0,0,0,0,0,0,0    1,1,0,0,0,0,0,0,0,0,0,0      cheb #  Sersic index n (de Vaucouleurs n=4) 
+ 6) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 7) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 8) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #     ----- 
+ 9) 0.443,9.252e-17,-9.252e-17,1.295e-16,-1.665e-16,-9.252e-17,-1.850e-17,-1.758e-16,-1.203e-16,4.718e-16,-5.551e-17,-2.336e-16    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Axis ratio (b/a)  
+10) -78.175,7.105e-15,-5.921e-15,1.303e-14,-1.303e-14,-5.921e-15,-1.184e-15,-1.303e-14,-8.882e-15,3.316e-14,-2.368e-15,-1.510e-14    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Position angle (PA) [deg: Up=0, Left=90]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+# Component number: 5
+ 0) sky                    #  Component type
+ 1) 4.349e-02,7.548e-02,2.698e-02,-6.779e-02,-0.154,-0.169,-9.971e-02,1.262e-02,0.108,0.127,7.570e-02,2.058e-02    1,0,0,0,0,0,0,0,0,0,0,0      cheb #  Sky background at center of fitting region [ADUs]
+ 2) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #  dsky/dx (sky gradient in x)     [ADUs/pix]
+ 3) 0,0,0,0,0,0,0,0,0,0,0,0    0,0,0,0,0,0,0,0,0,0,0,0      cheb #  dsky/dy (sky gradient in y)     [ADUs/pix]
+ Z) 0                      #  Skip this model in output image?  (yes=1, no=0)
+
+================================================================================
+

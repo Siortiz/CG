@@ -1,0 +1,40 @@
+================================================================================
+# GUIDE TO INPUT FILE FOR GALFITM (a product of the MegaMorph project)
+Including multi-band fitting, non-parametric component and MultiNest sampling.
+CSL = comma separated list (must not contain any whitespace)
+Where several lines are given for the same letter code, these are alternative
+examples. The behaviour for multiple lines with the same letter is undefined.
+================================================================================
+A) Field_Img/Grupo_187/187_SPLUS-s38s38_U.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_F378.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_F395.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_F410.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_F430.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_G.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_F515.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_R.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_F660.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_I.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_F861.fits,Field_Img/Grupo_187/187_SPLUS-s38s38_Z.fits
+A1) u,J0378,J0395,J0410,J0430,g,J0515,r,J0660,i,J0861,z
+A2) 3536,3770,3940,4094,4292,4751,5133,6258,6614,7690,8611,8831
+B) galfitm_187_SPLUS-s38s38.fits
+C) none
+D) Field_Img/psf/psf_SPLUS-s38s38_U.fits,Field_Img/psf/psf_SPLUS-s38s38_F378.fits,Field_Img/psf/psf_SPLUS-s38s38_F395.fits,Field_Img/psf/psf_SPLUS-s38s38_F410.fits,Field_Img/psf/psf_SPLUS-s38s38_F430.fits,Field_Img/psf/psf_SPLUS-s38s38_G.fits,Field_Img/psf/psf_SPLUS-s38s38_F515.fits,Field_Img/psf/psf_SPLUS-s38s38_R.fits,Field_Img/psf/psf_SPLUS-s38s38_F660.fits,Field_Img/psf/psf_SPLUS-s38s38_I.fits,Field_Img/psf/psf_SPLUS-s38s38_F861.fits,Field_Img/psf/psf_SPLUS-s38s38_Z.fits
+E) 1
+F) Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits,Field_Img/mask/mask_187_SPLUS-s38s38.fits
+G) none
+H) 0.000000 500.000000 0.000000 500.000000
+I) 150 150
+J) 20.753,19.981,19.992,21.0,21.129,23.5,21.453,23.535,21.061,23.337,21.608,22.756
+K) 0.55 0.55
+O) regular
+P) 0  
+U) 0 
+W) input,model,residual 
+#----------Galaxia 0-----------
+0) sersic
+1) 250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000 1
+2) 250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000,250.000000 1
+3) 16.664555,15.786546,16.490501,15.890472,15.655347,15.621154,15.553590,15.553590,14.292560,14.029964,14.928441,14.223099 12
+4) 22.655342,22.655342,22.655342,22.655342,22.655342,22.655342,22.655342,22.655342,22.655342,22.655342,22.655342,22.655342 2
+5) 0.287375,0.287375,0.287375,0.287375,0.287375,0.287375,0.287375,0.287375,0.287375,0.287375,0.287375,0.287375 2
+9) 0.433284,0.433284,0.433284,0.433284,0.433284,0.433284,0.433284,0.433284,0.433284,0.433284,0.433284,0.433284 1
+10) -25.382240,-25.382240,-25.382240,-25.382240,-25.382240,-25.382240,-25.382240,-25.382240,-25.382240,-25.382240,-25.382240,-25.382240 1
+Z) 0
+#-------sky----------
+0) sky
+1) 0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000 1
+2) 0.000      0 
+3) 0.000      0 
+Z) 0

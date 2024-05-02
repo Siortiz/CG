@@ -75,6 +75,7 @@ for f in Fields['Field']:
 
 header_names=['ID']
 header_names.append('CHI2NU')
+
 for i in range(12):
 	header_names.append('XC_%s'%(Fil_name[i]))
 	header_names.append('e_XC_%s'%(Fil_name[i]))
@@ -95,11 +96,12 @@ for i in range(12):
 				
 table = Table(rows=Tabla,
               names=header_names)
+
 						
 Datos_S= S.group_by('Group')
 GS=Datos_S.groups.keys
 #g = int(GS['Group'])
-#ascii.write(table, f'Catalogos/GalfitM_output_try.csv', format='csv', fast_writer=False,overwrite=True) #guarda la tabla completa con los 
+ascii.write(table, f'Catalogos/GalfitM_output_try_4.csv', format='csv', fast_writer=False) #guarda la tabla completa con los 
 		
 		
 		

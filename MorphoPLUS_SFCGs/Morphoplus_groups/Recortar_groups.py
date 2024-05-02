@@ -16,8 +16,8 @@ GS=Datos_S.groups.keys #grupos
 Datos_S_field= S.group_by('Field')
 Fields=Datos_S_field.groups.keys #numero de grupos
 #Bands=np.array(['R','F378','F395','F410','F430','F515','F660','F861','G','I','Z','U']) #filtros de splus
-Bands=np.array(['F410','F430','F515','F660', 'F861','G', 'I','Z','U']) #filtros de splus
-#Bands=np.array(['F515']) #filtros de splus
+Bands=np.array(['F395','F410','F430','F515','F660','F861','G', 'I','Z','U']) #filtros de splus
+#Bands=np.array(['Z','U']) #filtros de splus
 
 
 
@@ -30,7 +30,7 @@ def recortar(position,size2,grupo,field,hdu,hdr,B): #le ingreso el nombre de la 
 	directorio = f'Field_Img/Grupo_{grupo}'
 	if not os.path.exists(directorio):
 		os.makedirs(directorio)
-	im_Re.writeto(f'{directorio}/%s_%s_%s.fits'%(grupo,field,B))
+	im_Re.writeto(f'{directorio}/%s_%s_%s.fits'%(grupo,field,B), overwrite=True)
 	im_Re._close()
 	return
 
