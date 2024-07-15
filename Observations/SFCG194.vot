@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VOTABLE version="1.4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
+  xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3">
+ <DESCRIPTION>
+   VizieR Astronomical Server vizier.cds.unistra.fr
+    Date: 2024-05-17T14:51:41 [V7.33.3]
+   Explanations and Statistics of UCDs:			See LINK below
+   In case of problem, please report to:	cds-question@unistra.fr
+ </DESCRIPTION>
+<!-- VOTable description at http://www.ivoa.net/Documents/latest/VOT.html -->
+<INFO name="service_protocol" value="ASU">  IVOID of the protocol through which the data was retrieved</INFO>
+<INFO name="request_date" value="2024-05-17T14:51:41">  Query execution date</INFO>
+<INFO name="request" value="https://vizier.cds.unistra.fr/viz-bin/votable?-oc.form=dec&amp;-out.max=50&amp;-out.add=_RAJ,_DEJ&amp;-order=I&amp;-out.src=J/MNRAS/453/1965/table2&amp;-c=22:00:45.540, -42:49:15.80&amp;-c.eq=J2000&amp;-c.r=  6&amp;-c.u=arcmin&amp;-c.geom=b&amp;-source=J/MNRAS/453/1965/table2&amp;-out=Group&amp;-out=Gal&amp;-out=RAJ2000&amp;-out=DEJ2000&amp;-out=zmemb&amp;-out=gmemb&amp;-out=FUV&amp;-out=NUV&amp;-out=Simbad&amp;">  Full request URL (POST)</INFO>
+<INFO name="contact" value="cds-question@unistra.fr">  Email or URL to contact publisher</INFO>
+<INFO name="server_software" value="7.33.3">  Software version</INFO>
+<INFO name="publisher" value="CDS">  Data centre that produced the VOTable</INFO>
+
+<!--
+Execution Reports
+ -->
+<INFO ID="Target" name="-c" value="330.189750-42.821056,bm=6.000000/6.">
+Constraint -bmark=POST</INFO>
+
+<RESOURCE ID="yCat_74531965" name="J/MNRAS/453/1965">
+  <DESCRIPTION>Star-forming compact groups (Hernandez-Fernandez+, 2015)</DESCRIPTION>  <INFO name="ivoid" value="ivo://cds.vizier/j/mnras/453/1965">    IVOID of underlying data collection  </INFO>
+  <INFO name="creator" value="Hernandez-Fernandez J.D.">    First author or institution  </INFO>
+  <INFO name="cites" value="bibcode:2015MNRAS.453.1965H">    Article or Data origin sources  </INFO>
+  <INFO name="original_date" value="2015">    Year of the article publication  </INFO>
+  <INFO name="reference_url" value="https://cdsarc.cds.unistra.fr/viz-bin/cat/J/MNRAS/453/1965">    Dataset landing page  </INFO>
+  <INFO name="publication_date" value="2019-08-27">    Date of first publication in the data centre  </INFO>
+  <INFO name="rights_uri" value="https://cds.unistra.fr/vizier-org/licences_vizier.html">    Licence URI  </INFO>
+
+  <COOSYS ID="J2000" system="eq_FK5" equinox="J2000"/>
+  <TABLE ID="J_MNRAS_453_1965_table2" name="J/MNRAS/453/1965/table2">
+    <DESCRIPTION>SFCG galaxy catalogue</DESCRIPTION>
+    <!-- Definitions of GROUPs and FIELDs -->
+
+<!-- +++No column could be found to attach a LINK in table: J/MNRAS/453/1965/table2 -->
+    <FIELD name="_RAJ2000" ucd="pos.eq.ra" ref="J2000" datatype="double" width="11" precision="7" unit="deg"><!-- ucd="POS_EQ_RA" -->
+      <DESCRIPTION>Right ascension (FK5, Equinox=J2000.0) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)</DESCRIPTION>
+    </FIELD>
+    <FIELD name="_DEJ2000" ucd="pos.eq.dec" ref="J2000" datatype="double" width="11" precision="7" unit="deg"><!-- ucd="POS_EQ_DEC" -->
+      <DESCRIPTION>Declination (FK5, Equinox=J2000.0) (computed by VizieR, not part of the original data. The format may include more digits than the original data because of internal accuracy requirements in VizieR and across other CDS services)</DESCRIPTION>
+    </FIELD>
+    <FIELD name="Group" ucd="meta.id;meta.main" datatype="short" width="3"><!-- ucd="ID_NUMBER" -->
+      <DESCRIPTION>Identification number of the SFCG</DESCRIPTION>
+      <LINK href="http://vizier.cds.unistra.fr/viz-bin/VizieR-4?-info=XML&amp;-out.add=.&amp;-source=J/MNRAS/453/1965&amp;Group=${Group}"/>
+    </FIELD>
+    <FIELD name="Gal" ucd="meta.number" datatype="unsignedByte" width="1"><!-- ucd="ID_PARENT" -->
+      <DESCRIPTION>Identification number of the SFCG galaxy ordered by increasing right ascension</DESCRIPTION>
+    </FIELD>
+    <FIELD name="RAJ2000" ucd="pos.eq.ra;meta.main" ref="J2000" datatype="char" arraysize="11" unit=""><!-- ucd="POS_EQ_RA_MAIN" -->
+      <DESCRIPTION>Right ascension of UV-bright galaxy member (J2000)</DESCRIPTION>
+    </FIELD>
+    <FIELD name="DEJ2000" ucd="pos.eq.dec;meta.main" ref="J2000" datatype="char" arraysize="11" unit=""><!-- ucd="POS_EQ_DEC_MAIN" -->
+      <DESCRIPTION>Declination of UV-bright galaxy member (J2000)</DESCRIPTION>
+    </FIELD>
+    <FIELD name="zmemb" ucd="src.redshift.phot" datatype="double" width="9" precision="6"><!-- ucd="REDSHIFT_PHOT" -->
+      <DESCRIPTION>Galaxy redshift</DESCRIPTION>
+    </FIELD>
+    <FIELD name="gmemb" ucd="meta.code" datatype="short" width="2"><!-- ucd="CODE_MISC" -->
+      <DESCRIPTION>[-1/1] Group membership code (1)</DESCRIPTION>
+      <LINK href="http://vizier.cds.unistra.fr/viz-bin/nph-htx/A?%5cifnum%7b${gmemb}%7d=0%7b${gmemb}%7d%5celse%5cvNote%7b%26lt%3b%26quot%3bNote%26quot%3b%5c%26catid=74531965%5c%26notid=2%5c%26-out.emph=${gmemb}%7d%7b${gmemb}%7d%5cfi"/>
+    </FIELD>
+    <FIELD name="FUV" ucd="phot.mag;em.UV.100-200nm" datatype="float" width="7" precision="4" unit="mag"><!-- ucd="PHOT_UV_1500" -->
+      <DESCRIPTION>FUV magnitude (AB) corrected for Galactic extinction</DESCRIPTION>
+    </FIELD>
+    <FIELD name="NUV" ucd="phot.mag;em.UV" datatype="float" width="7" precision="4" unit="mag"><!-- ucd="PHOT_MAG_UV" -->
+      <DESCRIPTION>NUV magnitude (AB) corrected for Galactic extinction</DESCRIPTION>
+    </FIELD>
+    <FIELD name="Simbad" ucd="meta.ref.url" datatype="char" arraysize="6*"><!-- ucd="DATA_LINK" -->
+      <DESCRIPTION>Simbad column added by the CDS</DESCRIPTION>
+<!-- ask the {\bf\fg{FireBrick}Simbad} data-base about this object -->
+
+
+<!-- No link in: \ifregexp{[^ ]}{${Group}${Gal}}{\wSimbad{[HM2015b] ${Group} ${Gal} }{[HM2015b] ${Group} ${Gal} }}\else{${}}\fi -->
+    </FIELD>
+<DATA><TABLEDATA>
+<TR><TD>330.1680000</TD><TD>-42.8186111</TD><TD>194</TD><TD>1</TD><TD>22 00 40.32</TD><TD>-42 49 07.0</TD><TD>0.000000</TD><TD>0</TD><TD>19.9012</TD><TD>19.4095</TD><TD>Simbad</TD></TR>
+<TR><TD>330.1810000</TD><TD>-42.8215000</TD><TD>194</TD><TD>2</TD><TD>22 00 43.44</TD><TD>-42 49 17.4</TD><TD>0.067693</TD><TD>0</TD><TD>20.2702</TD><TD>19.2984</TD><TD>Simbad</TD></TR>
+<TR><TD>330.1990000</TD><TD>-42.8155000</TD><TD>194</TD><TD>3</TD><TD>22 00 47.76</TD><TD>-42 48 55.8</TD><TD>0.000000</TD><TD>0</TD><TD>20.3589</TD><TD>20.2326</TD><TD>Simbad</TD></TR>
+<TR><TD>330.2110000</TD><TD>-42.8286111</TD><TD>194</TD><TD>4</TD><TD>22 00 50.64</TD><TD>-42 49 43.0</TD><TD>0.000000</TD><TD>0</TD><TD>19.2713</TD><TD>18.8766</TD><TD>Simbad</TD></TR>
+</TABLEDATA></DATA>
+</TABLE>
+<INFO name="matches" value="4">matching records</INFO>
+
+<INFO name="Warning" value="vc_coo can't change epoch"/>
+<INFO name="Warning" value="increase the precision for computed column 8"/>
+<INFO name="Warning" value="increase the precision for computed column 8"/>
+</RESOURCE>
+</VOTABLE>

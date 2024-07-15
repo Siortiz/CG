@@ -70,7 +70,7 @@ for f in Fields['Field']:
 		for i in range(len(Tablef)):
 			fi=fits.open("galfitm_%s_%s.fits"%(g,f))
 			Tabla.append(leer_header(i+1,fi[13].header,Tablef['ID'][i]))
-			grafico(fi,g,f)
+			#grafico(fi,g,f)
 
 
 header_names=['ID']
@@ -81,10 +81,10 @@ for i in range(12):
 	header_names.append('e_XC_%s'%(Fil_name[i]))
 	header_names.append('YC_%s'%(Fil_name[i]))
 	header_names.append('e_YC_%s'%(Fil_name[i]))
-	header_names.append('RE_%s'%(Fil_name[i]))
-	header_names.append('e_RE_%s'%(Fil_name[i]))
 	header_names.append('MAG_%s'%(Fil_name[i]))
 	header_names.append('e_MAG_%s'%(Fil_name[i]))
+	header_names.append('RE_%s'%(Fil_name[i]))
+	header_names.append('e_RE_%s'%(Fil_name[i]))
 	header_names.append('n_%s'%(Fil_name[i]))
 	header_names.append('e_n_%s'%(Fil_name[i]))
 	header_names.append('AR_%s'%(Fil_name[i]))
@@ -101,7 +101,7 @@ table = Table(rows=Tabla,
 Datos_S= S.group_by('Group')
 GS=Datos_S.groups.keys
 #g = int(GS['Group'])
-ascii.write(table, f'Catalogos/GalfitM_output_try_4.csv', format='csv', fast_writer=False) #guarda la tabla completa con los 
+ascii.write(table, f'Catalogos_try/GalfitM_235.csv', format='csv', fast_writer=False, overwrite=True) #guarda la tabla completa con los 
 		
 		
 		

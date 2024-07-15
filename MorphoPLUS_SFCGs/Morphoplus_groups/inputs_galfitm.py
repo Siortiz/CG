@@ -151,7 +151,7 @@ def arh_galfit(GRf,z,field,size):
 	Data.append('#-------sky----------')
 	Data.append('0) sky')
 	Data.append(Median_sky(grupo,field)) # sky background       [ADU counts]
-	Data.append('2) 0.000      0 ') # dsky/dx (sky gradient in x) 
+i	Data.append('2) 0.000      0 ') # dsky/dx (sky gradient in x) 
 	Data.append('3) 0.000      0 ') # dsky/dy (sky gradient in y)
 	Data.append('Z) 0')   # Skip this model in output image?  (yes=1, no=0)
 	# Guarda cada linea de data en un archivo
@@ -175,10 +175,11 @@ for f in Fields['Field']:
 		mask=Datos_SF.groups.keys['Group'] == g#'cCGs-4007' #Gt['Groups'][i]
 		#print(([i],G['Groups'][i]))
 		GR=Datos_SF.groups[mask]
-		print(GR)
+		print(GR['X'])
 		Da_f= GR.group_by('Field')
 		X,Y=arh_galfit(GR,zp,f,size)
 		X=np.array(X)
 		Y=np.array(Y)
-		mask_ge(f,g,X,Y)
-
+		#mask_ge(f,g,X,Y)
+		print(X)
+		print(Y)

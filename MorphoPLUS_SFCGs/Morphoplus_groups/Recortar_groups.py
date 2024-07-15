@@ -15,8 +15,8 @@ GS=Datos_S.groups.keys #grupos
 
 Datos_S_field= S.group_by('Field')
 Fields=Datos_S_field.groups.keys #numero de grupos
-#Bands=np.array(['R','F378','F395','F410','F430','F515','F660','F861','G','I','Z','U']) #filtros de splus
-Bands=np.array(['F395','F410','F430','F515','F660','F861','G', 'I','Z','U']) #filtros de splus
+Bands=np.array(['R','F378','F395','F410','F430','F515','F660','F861','G','I','Z','U']) #filtros de splus
+#Bands=np.array(['F378','F395','F410','F430','F515','F660','F861','G','I','Z','U']) #filtros de splus
 #Bands=np.array(['Z','U']) #filtros de splus
 
 
@@ -75,8 +75,8 @@ def img_det(field,grupo):
 
 Data=[]
 for f in Fields["Field"]:	
-	print(f)
-	por_campo(f)
+	#print(f)
+	#por_campo(f)
 	SF=S[S['Field']==f]
 	Datos_SF= SF.group_by('Group')
 	GS=Datos_SF.groups.keys #grupos
