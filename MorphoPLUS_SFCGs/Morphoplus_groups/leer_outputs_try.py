@@ -90,30 +90,37 @@ for i in range(12):
     header_names.append('PA_%s'%(Fil_name[i]))
     header_names.append('e_PA_%s'%(Fil_name[i]))
 
-#S=Table.read('Catalogos/SPLUS_Table.csv')
+#$S=Table.read('/home/seba/Documents/CG/Observaciones_SPLUS/Input_MorphoPlus.csv')
 Datos_S= S.group_by('Field')
+
+
 Fields=Datos_S.groups.keys 
 Bands=np.array(['U','F378','F395','F410','F430','G','F515','R','F660','I','F861','Z'])
+no_ajustados = []
 for f in Fields['Field']:
     SF=S[S['Field']==f]
     Datos_SF= SF.group_by('Group')
     GS=Datos_SF.groups.keys #grupos
     for g in GS['Group']:
-        mask=Datos_SF.groups.keys['Group'] ==  g #'cCGs-4007' #Gt['Groups'][i]
-        Tablef=Datos_SF.groups[mask]
-        fi=fits.open("galfitm_%s_%s.fits"%(g,f))
+        try:
+            mask=Datos_SF.groups.keys['Group'] ==  g #'cCGs-4007' #Gt['Groups'][i]
+            Tablef=Datos_SF.groups[mask]
+            fi=fits.open("galfitm_%s_%s.fits"%(g,f))
         
-        for i in range(len(Tablef)):
-            #fi=fits.open("galfitm_%s_%s.fits"%(g,f))
-            gal = Tablef[i]['Gal']
-            ID = Tablef[i]['ID']
-            header_data = leer_header(i+1,fi[13].header)
-            #print(type(g))
-            header_data['Group'] = g
-            header_data['Gal'] = gal
-            header_data['ID'] = ID
-            Tabla.append(header_data)
-			#grafico(fi,g,f)
+            for i in range(len(Tablef)):
+                #fi=fits.open("galfitm_%s_%s.fits"%(g,f))
+                gal = Tablef[i]['Gal']
+                ID = Tablef[i]['ID']
+                header_data = leer_header(i+1,fi[13].header)
+                #print(type(g))
+                header_data['Group'] = g
+                header_data['Gal'] = gal
+                header_data['ID'] = ID
+                Tabla.append(header_data)
+		        #grafico(fi,g,f)
+        except:
+            no_ajustados.append(g)
+print(f"Los grupos no ajustados son: {no_ajustados}")
 
 
 #header_names = ['Group', 'Gal', 'ID', 'CHI2NU']
@@ -141,10 +148,10 @@ table = Table(rows=Tabla,
               names=header_names)
 
 						
-Datos_S= S.group_by('Group')
-GS=Datos_S.groups.keys
+#Datos_S= S.group_by('Group')
+#GS=Datos_S.groups.keys
 #g = int(GS['Group'])
-ascii.write(table, f'Catalogos_try/GalfitM_output_final_3.csv', format='csv', fast_writer=False, overwrite=True) #guarda la tabla completa con los 
+ascii.write(table, f'Catalogos_try/GalfitM_output_final_ahorasi.csv', format='csv', fast_writer=False, overwrite=True) #guarda la tabla completa con los 
 		
 		
 		

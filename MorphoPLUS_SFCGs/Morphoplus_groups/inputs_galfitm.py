@@ -151,7 +151,7 @@ def arh_galfit(GRf,z,field,size):
 	Data.append('#-------sky----------')
 	Data.append('0) sky')
 	Data.append(Median_sky(grupo,field)) # sky background       [ADU counts]
-i	Data.append('2) 0.000      0 ') # dsky/dx (sky gradient in x) 
+	Data.append('2) 0.000      0 ') # dsky/dx (sky gradient in x) 
 	Data.append('3) 0.000      0 ') # dsky/dy (sky gradient in y)
 	Data.append('Z) 0')   # Skip this model in output image?  (yes=1, no=0)
 	# Guarda cada linea de data en un archivo
